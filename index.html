@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SMP Nurohmat</title>
   <style>
-    /* RESET */
     * {
       margin: 0;
       padding: 0;
@@ -14,11 +13,10 @@
 
     body {
       font-family: Arial, sans-serif;
-      background-color: #000; /* latar belakang hitam */
+      background-color: #000;
       color: #fff;
     }
 
-    /* Berita jalan atas */
     .top-news {
       background-color: #ffcc00;
       color: #000;
@@ -27,13 +25,12 @@
       font-weight: bold;
     }
 
-    /* HEADER */
-    nav.horizontal-nav {
-      background-color: #001f3f; /* biru tua */
+    nav {
+      background-color: #001f3f;
       color: white;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       padding: 15px 30px;
       flex-wrap: wrap;
     }
@@ -41,30 +38,26 @@
     .logo {
       font-size: 24px;
       font-weight: bold;
-      color: gold; /* warna emas */
+      color: gold;
     }
 
-    /* Menu horizontal */
     .menu {
-      list-style: none;
       display: flex;
       gap: 20px;
+      list-style: none;
     }
 
     .menu li a {
       color: white;
       text-decoration: none;
       font-weight: bold;
-      padding: 5px 10px;
       transition: 0.3s;
     }
 
     .menu li a:hover {
       color: #ffcc00;
-      border-bottom: 2px solid #ffcc00;
     }
 
-    /* LOGIN DROPDOWN */
     .login-dropdown {
       position: relative;
     }
@@ -72,15 +65,11 @@
     .login-btn {
       background-color: white;
       color: #001f3f;
-      padding: 10px 15px;
       font-weight: bold;
-      border: none;
+      padding: 8px 12px;
       border-radius: 5px;
+      border: none;
       cursor: pointer;
-    }
-
-    .login-btn:hover {
-      background-color: #ccc;
     }
 
     .dropdown-content {
@@ -88,28 +77,28 @@
       position: absolute;
       right: 0;
       background-color: white;
-      min-width: 160px;
-      border-radius: 5px;
+      min-width: 150px;
       box-shadow: 0 8px 16px rgba(0,0,0,0.2);
       z-index: 1;
+      border-radius: 5px;
+      overflow: hidden;
     }
 
     .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
       display: block;
+      padding: 10px 12px;
+      color: #000;
+      text-decoration: none;
     }
 
     .dropdown-content a:hover {
-      background-color: #f1f1f1;
+      background-color: #eee;
     }
 
     .login-dropdown:hover .dropdown-content {
       display: block;
     }
 
-    /* HERO */
     .hero {
       padding: 60px 20px;
       text-align: center;
@@ -119,56 +108,186 @@
     .hero h1 {
       font-size: 36px;
       margin-bottom: 10px;
+      color: gold;
     }
 
     .hero p {
-      font-size: 20px;
-      color: #ddd;
+      font-size: 18px;
+      color: #ccc;
     }
 
-    /* FOOTER */
+    /* SLIDER */
+    .slider {
+      max-width: 100%;
+      margin: 40px auto;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slides {
+      display: flex;
+      width: 300%;
+      animation: slide 12s infinite;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    @keyframes slide {
+      0% {transform: translateX(0);}
+      33% {transform: translateX(-100%);}
+      66% {transform: translateX(-200%);}
+      100% {transform: translateX(0);}
+    }
+
+    /* News Section */
+    .news {
+      padding: 40px 20px;
+      background-color: #111;
+      text-align: center;
+    }
+
+    .news h2 {
+      color: gold;
+      margin-bottom: 20px;
+    }
+
+    .news-item {
+      max-width: 800px;
+      margin: 15px auto;
+      background-color: #222;
+      padding: 20px;
+      border-left: 4px solid gold;
+      text-align: left;
+      display: flex;
+      gap: 20px;
+    }
+
+    .news-item img {
+      width: 120px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .news-content {
+      flex: 1;
+    }
+
     footer {
       background-color: #111;
-      color: white;
       text-align: center;
-      padding: 15px 0;
+      padding: 15px;
       font-size: 14px;
+      color: #888;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu {
+        flex-direction: column;
+        gap: 10px;
+        margin: 10px 0;
+      }
+
+      .login-dropdown {
+        align-self: flex-end;
+        margin-top: 10px;
+      }
+
+      .news-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .news-item img {
+        width: 100%;
+        height: auto;
+      }
+
+      .slides img {
+        height: 250px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="top-news">
-      <marquee>📢 Penerimaan Peserta Didik Baru SMP Nurohmat 2025 telah dibuka! | 🏆 Selamat kepada siswa yang menjuarai lomba Matematika Nasional!</marquee>
-    </div>
-    <nav class="horizontal-nav">
-      <div class="logo">SMP NUROHMAT</div>
-      <ul class="menu">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">News</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <div class="login-dropdown">
-        <button class="login-btn">Login</button>
-        <div class="dropdown-content">
-          <a href="login.html?role=ortu">Login Orang Tua</a>
-          <a href="login.html?role=guru">Login Guru</a>
-        </div>
-      </div>
-    </nav>
-  </header>
+  <!-- News berjalan -->
+  <div class="top-news">
+    <marquee>📢 PPDB SMP Nurohmat 2025 telah dibuka! | 🥇 Juara 1 OSN Matematika Nasional | 🥈 Juara Umum Pramuka Kabupaten | 🏅 SMP Berprestasi Tingkat Provinsi</marquee>
+  </div>
 
+  <!-- Header -->
+  <nav>
+    <div class="logo">SMP NUROHMAT</div>
+    <ul class="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="login-dropdown">
+      <button class="login-btn">Login</button>
+      <div class="dropdown-content">
+        <a href="login.html?role=ortu">Login Orang Tua</a>
+        <a href="login.html?role=guru">Login Guru</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
   <section class="hero">
-    <div class="flyer">
-      <h1>Selamat Datang di SMP NUROHMAT</h1>
-      <p>Mendidik dengan nilai-nilai akhlak dan ilmu pengetahuan</p>
+    <h1>Selamat Datang di SMP Nurohmat</h1>
+    <p>Berakhlak • Berprestasi • Berwawasan Global</p>
+  </section>
+
+  <!-- Slider Prestasi -->
+  <section class="slider">
+    <div class="slides">
+      <img src="https://picsum.photos/seed/1/1200/400" alt="Prestasi 1">
+      <img src="https://picsum.photos/seed/2/1200/400" alt="Prestasi 2">
+      <img src="https://picsum.photos/seed/3/1200/400" alt="Prestasi 3">
     </div>
   </section>
 
+  <!-- Berita Sekolah -->
+  <section class="news">
+    <h2>Berita Terbaru</h2>
+
+    <div class="news-item">
+      <img src="https://picsum.photos/seed/101/200/150" alt="Berita 1">
+      <div class="news-content">
+        <strong>📌 24 Juli 2025:</strong> SMP Nurohmat menjadi tuan rumah Olimpiade Sains Nasional tingkat kabupaten.
+      </div>
+    </div>
+
+    <div class="news-item">
+      <img src="https://picsum.photos/seed/102/200/150" alt="Berita 2">
+      <div class="news-content">
+        <strong>📌 18 Juli 2025:</strong> Tim Pramuka Nurohmat menyabet Juara Umum pada lomba tingkat 3 Nasional.
+      </div>
+    </div>
+
+    <div class="news-item">
+      <img src="https://picsum.photos/seed/103/200/150" alt="Berita 3">
+      <div class="news-content">
+        <strong>📌 10 Juli 2025:</strong> Pameran Karya Ilmiah Remaja sukses digelar dengan 12 inovasi karya siswa.
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 SMP Nurohmat. All rights reserved.</p>
+    &copy; 2025 SMP Nurohmat. All rights reserved.
   </footer>
 
 </body>
