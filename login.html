@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Akun</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login Akun</h2>
+    <form onsubmit="return loginUser(event)">
+      <label for="role">Masuk sebagai:</label>
+      <select id="role" required>
+        <option value="">-- Pilih --</option>
+        <option value="guru">Guru</option>
+        <option value="ortu">Orang Tua</option>
+      </select>
+
+      <label for="username">Username:</label>
+      <input type="text" id="username" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" required />
+
+      <button type="submit">Masuk</button>
+    </form>
+    <p id="loginMessage"></p>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const role = urlParams.get('role');
+    if (role) {
+      document.getElementById('role').value = role;
+    }
+  </script>
+</body>
+</html>
