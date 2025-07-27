@@ -3,101 +3,101 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SMP Nurohmat</title>
+  <title>Login - SMP Nurohmat</title>
   <style>
     body {
       margin: 0;
+      padding: 0;
       font-family: Arial, sans-serif;
       background-color: #000;
       color: #fff;
-    }
-    header {
-      background-color: #001f3f;
-      padding: 20px;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
+      height: 100vh;
     }
-    header h1 {
-      margin: 0;
+    .login-box {
+      background-color: #111;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #333;
+      width: 100%;
+      max-width: 400px;
+    }
+    h2 {
       color: gold;
-      font-size: 28px;
+      text-align: center;
+      margin-bottom: 20px;
     }
-    nav a {
-      margin: 0 15px;
-      color: white;
-      text-decoration: none;
+    label {
+      display: block;
+      margin-top: 10px;
     }
-    .login-buttons a {
-      margin-left: 10px;
-      color: gold;
-      text-decoration: none;
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 4px;
+    }
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 4px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: gold;
+      color: black;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
       font-weight: bold;
     }
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-    }
-    .section {
-      padding: 40px 20px;
-    }
-    .news-container {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .news-item {
-      background: #111;
-      border: 1px solid #444;
-      padding: 20px;
-      flex: 1;
-      min-width: 250px;
-    }
-    .news-item img {
-      max-width: 100%;
-      height: auto;
+    button:hover {
+      background-color: #e6c200;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>SMP Nurohmat</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#about">About Us</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="login-buttons">
-      <a href="login-ortu.html">Login Orang Tua</a>
-    </div>
-  </header>
+  <div class="login-box">
+    <h2>Login</h2>
+    <form onsubmit="return handleLogin(event)">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required />
 
-  <section class="hero">
-    <h2>Selamat Datang di Website Resmi SMP Nurohmat</h2>
-    <p>Mencetak generasi cerdas dan berakhlak mulia.</p>
-  </section>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required />
 
-  <section class="section" id="news">
-    <h3>Berita Terbaru & Pencapaian</h3>
-    <div class="news-container">
-      <div class="news-item">
-        <img src="https://via.placeholder.com/300x150" alt="Berita 1">
-        <h4>Juara 1 Lomba Sains Nasional</h4>
-        <p>Tim siswa SMP Nurohmat berhasil meraih juara 1 tingkat nasional dalam lomba sains.</p>
-      </div>
-      <div class="news-item">
-        <img src="https://via.placeholder.com/300x150" alt="Berita 2">
-        <h4>Penghargaan Sekolah Ramah Anak</h4>
-        <p>SMP Nurohmat menerima penghargaan sebagai sekolah ramah anak terbaik se-Jawa Barat.</p>
-      </div>
-    </div>
-  </section>
+      <label for="role">Login Sebagai</label>
+      <select id="role" name="role">
+        <option value="guru">Guru</option>
+        <option value="ortu">Orang Tua</option>
+      </select>
 
-  <section class="section" id="contact">
-    <h3>Kontak</h3>
-    <p>Alamat: Jl. Pendidikan No. 123, Bandung</p>
-    <p>Email: info@smpnurohmat.sch.id</p>
-    <p>Telepon: 022-12345678</p>
-  </section>
+      <button type="submit">Masuk</button>
+    </form>
+  </div>
+
+  <script>
+    function handleLogin(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const role = document.getElementById('role').value;
+
+      if (role === 'ortu' && username === "ortu" && password === "12345") {
+        window.location.href = "dashboard-ortu.html";
+      } else if (role === 'guru' && username === "guru" && password === "12345") {
+        window.location.href = "dashboard-guru.html";
+      } else {
+        alert("Login gagal. Username, password, atau role salah.");
+      }
+    }
+  </script>
 </body>
 </html>
