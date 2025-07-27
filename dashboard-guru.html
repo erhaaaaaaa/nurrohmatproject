@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard Guru - SMP Nurohmat</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #111;
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      color: gold;
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #ccc;
+      text-decoration: none;
+      margin: 12px 0;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    .sidebar a:hover {
+      color: gold;
+    }
+
+    .main {
+      flex: 1;
+      padding: 20px;
+    }
+
+    header {
+      background-color: #001f3f;
+      color: gold;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .content {
+      margin-top: 30px;
+    }
+
+    .card {
+      background-color: #111;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+
+    @media screen and (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .main {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Menu Guru</h2>
+    <a href="#">🏠 Home</a>
+    <a href="#">📊 Data Nilai</a>
+    <a href="#">📝 Presensi</a>
+    <a href="index.html">🚪 Logout</a>
+  </div>
+
+  <div class="main">
+    <header>
+      Dashboard Guru - SMP Nurohmat
+    </header>
+
+    <div class="content">
+      <div class="card">
+        <h3>Selamat datang, Bapak/Ibu Guru!</h3>
+        <p>Gunakan menu di sebelah kiri untuk mengelola nilai siswa, melihat presensi, dan lainnya.</p>
+      </div>
+
+      <div class="card">
+        <h4>Notifikasi Terbaru</h4>
+        <ul>
+          <li>✅ Penilaian semester genap telah dibuka.</li>
+          <li>🕘 Deadline pengisian nilai: 15 Agustus 2025</li>
+          <li>📢 Rapat Guru pada 10 Agustus 2025, pukul 09.00</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
