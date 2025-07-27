@@ -1,9 +1,8 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SMP Nurohmat</title>
   <style>
     body {
@@ -12,7 +11,6 @@
       background-color: #000;
       color: #fff;
     }
-
     header {
       background-color: #001f3f;
       padding: 20px;
@@ -20,185 +18,86 @@
       justify-content: space-between;
       align-items: center;
     }
-
-    .logo {
-      font-size: 24px;
+    header h1 {
+      margin: 0;
       color: gold;
+      font-size: 28px;
+    }
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+    }
+    .login-buttons a {
+      margin-left: 10px;
+      color: gold;
+      text-decoration: none;
       font-weight: bold;
     }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-    }
-
-    .login-links a {
-      color: gold;
-      text-decoration: none;
-      margin-left: 15px;
-    }
-
     .hero {
       text-align: center;
       padding: 60px 20px;
     }
-
-    .hero h1 {
-      font-size: 36px;
-      color: gold;
+    .section {
+      padding: 40px 20px;
     }
-
-    .news {
-      margin: 30px;
+    .news-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
     }
-
-    .news h2 {
-      color: gold;
-    }
-
     .news-item {
-      background-color: #111;
-      padding: 15px;
-      border-radius: 10px;
-      margin-bottom: 20px;
+      background: #111;
+      border: 1px solid #444;
+      padding: 20px;
+      flex: 1;
+      min-width: 250px;
+    }
+    .news-item img {
+      max-width: 100%;
+      height: auto;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">SMP Nurohmat</div>
+    <h1>SMP Nurohmat</h1>
     <nav>
       <a href="#">Home</a>
       <a href="#about">About Us</a>
       <a href="#contact">Contact</a>
     </nav>
-    <div class="login-links">
-      <a href="login.html?role=guru">Login Guru</a>
-      <a href="login.html?role=ortu">Login Orang Tua</a>
+    <div class="login-buttons">
+      <a href="login-ortu.html">Login Orang Tua</a>
     </div>
   </header>
 
-  <div class="hero">
-    <h1>Selamat Datang di SMP Nurohmat</h1>
-    <p>Membangun generasi berakhlak dan berprestasi</p>
-  </div>
+  <section class="hero">
+    <h2>Selamat Datang di Website Resmi SMP Nurohmat</h2>
+    <p>Mencetak generasi cerdas dan berakhlak mulia.</p>
+  </section>
 
-  <div class="news">
-    <h2>Berita & Pencapaian</h2>
-    <div class="news-item">
-      <strong>Juara 1 Lomba Sains se-Kabupaten!</strong>
-      <p>Tim SMP Nurohmat berhasil meraih juara 1 dalam lomba sains tingkat kabupaten pada bulan Juli 2025.</p>
+  <section class="section" id="news">
+    <h3>Berita Terbaru & Pencapaian</h3>
+    <div class="news-container">
+      <div class="news-item">
+        <img src="https://via.placeholder.com/300x150" alt="Berita 1">
+        <h4>Juara 1 Lomba Sains Nasional</h4>
+        <p>Tim siswa SMP Nurohmat berhasil meraih juara 1 tingkat nasional dalam lomba sains.</p>
+      </div>
+      <div class="news-item">
+        <img src="https://via.placeholder.com/300x150" alt="Berita 2">
+        <h4>Penghargaan Sekolah Ramah Anak</h4>
+        <p>SMP Nurohmat menerima penghargaan sebagai sekolah ramah anak terbaik se-Jawa Barat.</p>
+      </div>
     </div>
-    <div class="news-item">
-      <strong>Pentas Seni 2025 Sukses Digelar</strong>
-      <p>Acara tahunan pentas seni berjalan meriah dengan partisipasi seluruh siswa dan guru.</p>
-    </div>
-  </div>
-</body>
-</html>
+  </section>
 
-<!-- login.html -->
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login SMP Nurohmat</title>
-  <style>
-    body {
-      margin: 0;
-      background-color: #000;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .login-box {
-      background-color: #111;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-      width: 100%;
-      max-width: 400px;
-    }
-
-    h2 {
-      color: gold;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    label {
-      display: block;
-      margin-top: 15px;
-    }
-
-    input {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      background-color: #222;
-      border: 1px solid #444;
-      color: white;
-      border-radius: 5px;
-    }
-
-    button {
-      width: 100%;
-      padding: 10px;
-      background-color: #001f3f;
-      color: gold;
-      border: none;
-      margin-top: 20px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-    button:hover {
-      background-color: #003366;
-    }
-  </style>
-</head>
-<body>
-  <div class="login-box">
-    <h2 id="login-title">Login</h2>
-    <form id="login-form">
-      <label for="username">Username:</label>
-      <input type="text" id="username" required>
-
-      <label for="password">Password:</label>
-      <input type="password" id="password" required>
-
-      <button type="submit">Login</button>
-    </form>
-  </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const params = new URLSearchParams(window.location.search);
-      const role = params.get("role");
-
-      const title = document.getElementById("login-title");
-      if (role === "guru") {
-        title.textContent = "Login Guru";
-      } else if (role === "ortu") {
-        title.textContent = "Login Orang Tua";
-      }
-
-      document.getElementById("login-form").addEventListener("submit", function(e) {
-        e.preventDefault();
-        // Simulasi login sukses, arahkan ke dashboard sesuai role
-        if (role === "guru") {
-          window.location.href = "dashboard-guru.html";
-        } else if (role === "ortu") {
-          window.location.href = "dashboard-ortu.html";
-        }
-      });
-    });
-  </script>
+  <section class="section" id="contact">
+    <h3>Kontak</h3>
+    <p>Alamat: Jl. Pendidikan No. 123, Bandung</p>
+    <p>Email: info@smpnurohmat.sch.id</p>
+    <p>Telepon: 022-12345678</p>
+  </section>
 </body>
 </html>
