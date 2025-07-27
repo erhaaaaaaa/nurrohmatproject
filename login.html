@@ -1,40 +1,104 @@
+<!-- login.html -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login Akun</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Login SMP Nurohmat</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-box {
+      background-color: #111;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h2 {
+      color: gold;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      background-color: #222;
+      border: 1px solid #444;
+      color: white;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #001f3f;
+      color: gold;
+      border: none;
+      margin-top: 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #003366;
+    }
+  </style>
 </head>
 <body>
-  <div class="login-container">
-    <h2>Login Akun</h2>
-    <form onsubmit="return loginUser(event)">
-      <label for="role">Masuk sebagai:</label>
-      <select id="role" required>
-        <option value="">-- Pilih --</option>
-        <option value="guru">Guru</option>
-        <option value="ortu">Orang Tua</option>
-      </select>
-
+  <div class="login-box">
+    <h2 id="login-title">Login</h2>
+    <form id="login-form">
       <label for="username">Username:</label>
       <input type="text" id="username" required />
 
       <label for="password">Password:</label>
       <input type="password" id="password" required />
 
-      <button type="submit">Masuk</button>
+      <button type="submit">Login</button>
     </form>
-    <p id="loginMessage"></p>
   </div>
 
-  <script src="script.js"></script>
   <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const role = urlParams.get('role');
-    if (role) {
-      document.getElementById('role').value = role;
-    }
+    document.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const role = params.get("role");
+
+      const title = document.getElementById("login-title");
+      if (role === "guru") {
+        title.textContent = "Login Guru";
+      } else if (role === "ortu") {
+        title.textContent = "Login Orang Tua";
+      }
+
+      document.getElementById("login-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        // Simulasi login sukses, arahkan ke dashboard sesuai role
+        if (role === "guru") {
+          window.location.href = "dashboard-guru.html";
+        } else if (role === "ortu") {
+          window.location.href = "dashboard-ortu.html";
+        }
+      });
+    });
   </script>
 </body>
 </html>
