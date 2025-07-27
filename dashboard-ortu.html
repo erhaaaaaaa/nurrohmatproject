@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard Orang Tua - SMP Nurohmat</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    header {
+      background-color: #001f3f;
+      color: gold;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1rem;
+      background-color: #ff4136;
+      padding: 0.4rem 0.8rem;
+      border-radius: 5px;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    section {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    section h2 {
+      margin-bottom: 1rem;
+      color: #001f3f;
+    }
+
+    .info {
+      margin-bottom: 0.5rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background-color: #0074D9;
+      color: white;
+      padding: 1rem;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.6rem;
+      text-align: center;
+    }
+
+    th {
+      background-color: #001f3f;
+      color: white;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Dashboard Orang Tua - SMP Nurohmat</h1>
+    <nav>
+      <a href="index.html">Logout</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Info Siswa -->
+    <section>
+      <h2>Data Siswa</h2>
+      <div class="info">👧 Nama: <strong>Salsabila Azzahra</strong></div>
+      <div class="info">🏫 Kelas: <strong>7C</strong></div>
+      <div class="info">🆔 NISN: <strong>1234567890</strong></div>
+    </section>
+
+    <!-- Nilai -->
+    <section>
+      <h2>Ringkasan Nilai</h2>
+      <div class="grid">
+        <div class="card">📘 Nilai Harian<br><strong>87</strong></div>
+        <div class="card">🧪 Nilai Ulangan<br><strong>85</strong></div>
+        <div class="card">📝 Nilai UTS<br><strong>88</strong></div>
+        <div class="card">📄 Nilai UAS<br><strong>90</strong></div>
+      </div>
+    </section>
+
+    <!-- Absensi -->
+    <section>
+      <h2>Rekap Absensi</h2>
+      <table>
+        <thead>
+          <tr><th>Bulan</th><th>Hadir</th><th>Sakit</th><th>Izin</th><th>Alpha</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Juli</td><td>20</td><td>1</td><td>2</td><td>0</td></tr>
+          <tr><td>Agustus</td><td>21</td><td>1</td><td>1</td><td>1</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Silabus -->
+    <section>
+      <h2>Silabus Pelajaran</h2>
+      <ul>
+        <li>Matematika: Bilangan, Aljabar, Bangun Datar</li>
+        <li>Bahasa Indonesia: Teks Narasi, Teks Deskripsi</li>
+        <li>IPA: Sistem Organ Tubuh, Energi, Materi</li>
+        <li>IPS: Sejarah Indonesia, Peta, Interaksi Sosial</li>
+        <li>Agama: Akidah Akhlak, Fikih, Tarikh</li>
+        <li>PPKn: Norma, Hukum, Demokrasi</li>
+      </ul>
+    </section>
+
+    <!-- Pembayaran -->
+    <section>
+      <h2>Status Pembayaran</h2>
+      <table>
+        <thead>
+          <tr><th>Jenis Pembayaran</th><th>Jumlah</th><th>Status</th><th>Tanggal Bayar</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>SPP Semester 1</td><td>Rp1.200.000</td><td style="color:green;">Lunas</td><td>10 Juli 2025</td></tr>
+          <tr><td>Seragam</td><td>Rp350.000</td><td style="color:green;">Lunas</td><td>12 Juli 2025</td></tr>
+          <tr><td>Buku Paket</td><td>Rp400.000</td><td style="color:orange;">Belum Lunas</td><td>-</td></tr>
+          <tr><td>SPP Semester 2</td><td>Rp1.200.000</td><td style="color:orange;">Belum Lunas</td><td>-</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+</body>
+</html>
