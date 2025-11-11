@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PPDB SMP Nurohmat 2025</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    nav {
+      background-color: #001f3f;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: gold;
+    }
+
+    .menu {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .menu li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .menu li a:hover {
+      color: #ffcc00;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: #111;
+    }
+
+    .hero h1 {
+      font-size: 34px;
+      color: gold;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #ccc;
+      margin-top: 8px;
+    }
+
+    /* Form Container */
+    .ppdb-form {
+      background-color: #111;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+    }
+
+    .ppdb-form h2 {
+      text-align: center;
+      color: gold;
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #ffcc00;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      background-color: #222;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: 2px solid gold;
+    }
+
+    button {
+      background-color: gold;
+      color: #000;
+      border: none;
+      padding: 12px 20px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #ffdb4d;
+    }
+
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      color: #888;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .ppdb-form {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">SMP NUROHMAT</div>
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ppdb.html">PPDB</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Penerimaan Peserta Didik Baru (PPDB) 2025</h1>
+    <p>Bergabunglah bersama SMP Nurohmat — sekolah berprestasi dan berkarakter unggul.</p>
+  </section>
+
+  <!-- Formulir PPDB -->
+  <section class="ppdb-form">
+    <h2>Formulir Pendaftaran Online</h2>
+    <form id="formPPDB">
+      <div class="form-group">
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" required>
+      </div>
+
+      <div class="form-group">
+        <label for="nisn">NISN</label>
+        <input type="text" id="nisn" name="nisn" required>
+      </div>
+
+      <div class="form-group">
+        <label for="asalSekolah">Asal Sekolah</label>
+        <input type="text" id="asalSekolah" name="asalSekolah" required>
+      </div>
+
+      <div class="form-group">
+        <label for="tglLahir">Tanggal Lahir</label>
+        <input type="date" id="tglLahir" name="tglLahir" required>
+      </div>
+
+      <div class="form-group">
+        <label for="alamat">Alamat Lengkap</label>
+        <textarea id="alamat" name="alamat" rows="3" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="nohp">Nomor HP (Orang Tua/Wali)</label>
+        <input type="tel" id="nohp" name="nohp" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email (opsional)</label>
+        <input type="email" id="email" name="email">
+      </div>
+
+      <button type="submit">Kirim Pendaftaran</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 SMP Nurohmat. All rights reserved.
+  </footer>
+
+  <script>
+    // Saat form dikirim
+    document.getElementById("formPPDB").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const nama = document.getElementById("nama").value;
+      const asal = document.getElementById("asalSekolah").value;
+      const nohp = document.getElementById("nohp").value;
+
+      // Kirim ke WhatsApp (contoh otomatis)
+      const pesan = `Halo Admin SMP Nurohmat,%0ASaya ingin mendaftar PPDB.%0A%0A*Nama:* ${nama}%0A*Asal Sekolah:* ${asal}%0A*No HP:* ${nohp}`;
+      const url = `https://wa.me/6281234567890?text=${pesan}`;
+
+      window.open(url, "_blank");
+    });
+  </script>
+</body>
+</html>
